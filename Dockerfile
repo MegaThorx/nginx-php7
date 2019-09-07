@@ -28,6 +28,7 @@ RUN apk update && apk upgrade && \
     libpng-dev \
     icu-dev \
     libpq \
+    libzip-dev \
     libxslt-dev \
     libffi-dev \
     freetype-dev \
