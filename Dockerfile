@@ -42,7 +42,8 @@ RUN apk update && apk upgrade && \
       --with-png-dir=/usr/include/ \
       --with-jpeg-dir=/usr/include/ && \
     pecl install imagick && \
-    docker-php-ext-enable imagick && \
+    pecl install redis && \
+    docker-php-ext-enable imagick redis && \
     docker-php-ext-install iconv pdo_mysql pdo_sqlite mysqli gd exif intl xsl json soap dom zip opcache && \
     docker-php-source delete && \
     mkdir -p /run/nginx && \
