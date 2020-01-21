@@ -1,4 +1,4 @@
-FROM php:fpm-alpine
+FROM php:7.3-fpm-alpine
 
 LABEL maintainer="MegaThorx <megathorx@gmail.com>"
 
@@ -61,7 +61,7 @@ RUN echo "cgi.fix_pathinfo=0" > /usr/local/etc/php/conf.d/docker-vars.ini &&\
     echo "upload_max_filesize = 100M"  >> /usr/local/etc/php/conf.d/docker-vars.ini&&\
     echo "post_max_size = 100M"  >> /usr/local/etc/php/conf.d/docker-vars.ini &&\
     echo "variables_order = \"EGPCS\""  >> /usr/local/etc/php/conf.d/docker-vars.ini && \
-    echo "memory_limit = 128M"  >> /usr/local/etc/php/conf.d/docker-vars.ini && \
+    echo "memory_limit = 512M"  >> /usr/local/etc/php/conf.d/docker-vars.ini && \
     sed -i \
         -e "s/;catch_workers_output\s*=\s*yes/catch_workers_output = yes/g" \
         -e "s/pm.max_children = 5/pm.max_children = 4/g" \
