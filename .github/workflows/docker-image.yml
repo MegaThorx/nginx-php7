@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  IMAGE_NAME: nginx-php8
+  IMAGE_NAME: nginx-php7
   
 jobs:
   push:
