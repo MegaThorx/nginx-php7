@@ -35,8 +35,8 @@ RUN apk add --update --no-cache \
     libtool \
     imagemagick-dev \
     libwebp-dev \
+    gnu-libiconv-dev \
     libjpeg-turbo-dev && \
-    docker-php-ext-install iconv && \
     docker-php-ext-configure gd \
       --with-freetype \
       --with-jpeg \
@@ -44,7 +44,7 @@ RUN apk add --update --no-cache \
     pecl install imagick && \
     pecl install redis && \
     docker-php-ext-enable imagick redis && \
-    docker-php-ext-install pdo_mysql pdo_sqlite mysqli gd exif intl xsl json soap dom zip opcache && \
+    docker-php-ext-install iconv pdo_mysql pdo_sqlite mysqli gd exif intl xsl json soap dom zip opcache && \
     docker-php-source delete && \
     mkdir -p /run/nginx && \
     apk del gcc musl-dev linux-headers libffi-dev augeas-dev python3-dev make autoconf
