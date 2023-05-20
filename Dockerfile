@@ -2,8 +2,7 @@ FROM php:7.4-fpm-alpine
 
 LABEL maintainer="MegaThorx <megathorx@gmail.com>"
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache \ 
+RUN apk add --update --no-cache \ 
     nginx \ 
     bash \
     openssh-client \
@@ -12,8 +11,8 @@ RUN apk update && apk upgrade && \
     curl \
     libcurl \
     g++ \
-    python \
-    python-dev \
+    python3 \
+    python3-dev \
     py-pip \
     augeas-dev \
     libressl-dev \
@@ -49,7 +48,7 @@ RUN apk update && apk upgrade && \
     docker-php-ext-install iconv pdo_mysql pdo_sqlite mysqli gd exif intl xsl json soap dom zip opcache && \
     docker-php-source delete && \
     mkdir -p /run/nginx && \
-    apk del gcc musl-dev linux-headers libffi-dev augeas-dev python-dev make autoconf
+    apk del gcc musl-dev linux-headers libffi-dev augeas-dev python3-dev make autoconf
 
 RUN rm /etc/nginx/nginx.conf
 
