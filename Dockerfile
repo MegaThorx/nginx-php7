@@ -37,11 +37,10 @@ RUN apk add --update --no-cache \
     libwebp \
     libjpeg-turbo-dev && \
     docker-php-ext-configure gd \
-      --with-gd \
-      --with-freetype-dir=/usr/include/ \
-      --with-png-dir=/usr/include/ \
-      --with-jpeg-dir=/usr/include/ && \
-      --with-webp-dir=/usr/include/ && \
+      --with-freetype \
+      --with-png \
+      --with-jpeg && \
+      --with-webp && \
     pecl install imagick && \
     pecl install redis && \
     docker-php-ext-enable imagick redis && \
