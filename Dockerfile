@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 LABEL maintainer="MegaThorx <megathorx@gmail.com>"
 
@@ -35,12 +35,14 @@ RUN apk update && apk upgrade && \
     sqlite-dev \
     libtool \
     imagemagick-dev \
+    libwebp \
     libjpeg-turbo-dev && \
     docker-php-ext-configure gd \
       --with-gd \
       --with-freetype-dir=/usr/include/ \
       --with-png-dir=/usr/include/ \
       --with-jpeg-dir=/usr/include/ && \
+      --with-webp-dir=/usr/include/ && \
     pecl install imagick && \
     pecl install redis && \
     docker-php-ext-enable imagick redis && \
