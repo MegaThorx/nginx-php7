@@ -34,7 +34,7 @@ RUN apk add --update --no-cache \
     sqlite-dev \
     libtool \
     imagemagick-dev \
-    libwebp \
+    libwebp-dev \
     libjpeg-turbo-dev && \
     docker-php-ext-configure gd \
       --with-freetype \
