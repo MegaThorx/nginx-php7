@@ -38,7 +38,7 @@ RUN apk add --update --no-cache \
     libjpeg-turbo-dev && \
     docker-php-ext-configure gd \
       --with-freetype \
-      --with-jpeg && \
+      --with-jpeg \
       --with-webp && \
     pecl install imagick && \
     pecl install redis && \
